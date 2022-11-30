@@ -6,19 +6,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    <link rel="stylesheet" href="{{ URL::assets('css/normalize.css') }}">
-    <link rel="stylesheet" href="{{ URL::assets('css/main.css') }}">
+    <script src="https://kit.fontawesome.com/0f9a163592.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="{{ URL::asset('css/normalize.css') }}">
+    <link rel="stylesheet" href="{{ URL::asset('css/main.css') }}">
 
     <title>{{ $title ?? 'Sin titulo' }}</title>
 </head>
 
 <body>
     <header>
-        <h1>Primer layout</h1>
+        <h1>{{ $header ?? 'Sin titulo!' }}</h1>
     </header>
     
     <main>
-        <p>La vista funciona</p>
         {{ $slot }}
     </main>
 </body>
