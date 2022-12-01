@@ -8,7 +8,7 @@
 
     @if ($vacio)
     <p>No hay nada</p>
-    <a href="{{ route('cursos_update') }}"><i class="fa-solid fa-plus"></i></a>
+    <a href="{{ route('cursos_create') }}"><i class="fa-solid fa-plus"></i></a>
     @else
 
     @foreach ($cursos as $curso)
@@ -18,7 +18,11 @@
 
         <a href="{{ route('cursos_show', $curso) }}"><i class="fa-solid fa-eye"></i></a>
         <a href="{{ route('cursos_edit', $curso) }}"><i class="fa-solid fa-pencil"></i></a>
-        
+        <form action="{{ route('cursos_destroy', $curso) }}" method="post">
+            @csrf
+            @method('delete')
+            <button type="submit"><i class="fa-solid fa-trash" ></i></button>
+        </form>
     </div>
     <br>
     @endforeach

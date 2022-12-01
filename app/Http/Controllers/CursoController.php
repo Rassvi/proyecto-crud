@@ -44,26 +44,30 @@ class CursoController extends Controller
     }
 
     # Modificar un curso
-    public function edit(Curso $curso) 
-    { 
-        return view('cursos.edit', compact('curso')); 
+    public function edit(Curso $curso)
+    {
+        return view('cursos.edit', compact('curso'));
     } 
 
-    public function update(Request $request, Curso $curso) 
-    { 
-        $request->validate([ 
-            'curso' => 'required', 
-            'precio' => 'required', 
-            'fecha' => 'required', 
-        ]); 
+    public function update(Request $request, Curso $curso)
+    {
+        $request->validate([
+            'curso'=>['required'],
+            'precio'=>['required', 'numeric'],
+            'fecha'=>['required', 'date']
+        ]);
 
-        $curso->curso = $request->curso; 
-        $curso->precio = $request->precio; 
-        $curso->fecha = $request->fecha; 
+        $curso->curso = $request->curso;
+        $curso->precio = $request->precio;
+        $curso->fecha = $request->fecha;
         $curso->save();
 
         return redirect()->route('cursos_show', $curso);
     }
 
     # Eliminar curso
+    public function destroy(Curso $curso){
+        $curso->delete();
+        return redirect()->route('cursos_index');
+    }
 }

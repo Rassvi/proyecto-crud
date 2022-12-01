@@ -21,7 +21,8 @@
         <input type="number" step="any" name="precio" value="{{old('precio', $curso->precio)}}" id="precio"><br> 
         
         <label for="fecha">Fecha</label><br> 
-        <input type="text" name="fecha" value="{{old('fecha', $curso->fecha)}}" id="fecha"><br> 
+        <input type="date" name="fecha" value="{{old('fecha', $curso->fecha)}}" id="fecha"><br> 
         
-        <input type="submit" value="Editar"> </form>
+        <input type="submit" value="Editar"> 
+    </form>
 </x-secondary>
