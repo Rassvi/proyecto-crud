@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
+*{
+    box-sizing: border-box;
+    font-family: 'Noto Sans', sans-serif;
+    user-select: none;
+}
+
+body,
+html{
+    min-width: 100%;
+    min-height: 100vh;
+    background-color: lightgray;
+}
+
+body,
+.panel{
+    display: flex;
+    flex-flow: column;
+}
+
+a{
+    text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5{
+    margin: 0;
+}
+
+body{
+    align-items: center;
+}
+#titulo{
+    width: 100%;
+    padding: 1rem;
+    font-weight: lighter;
+    text-transform: capitalize;
+    font-size: 1.8rem;
+    text-align: center;
+}
+
+#contenidoP{
+    display: flex;
+    flex: 2;
+}
+
+.panel{
+    flex: 2;
+    padding: 2px;
+    align-self: center;
+    text-align: center;
+    margin-top: 2vh;
+    width: 500px;
+    border-radius: 6px;
+    font-size: 3vh;
+    outline: 1px dashed lightslategray;
+}
+
+.panel a{
+    padding: 15px;
+}
+
+.panel a:hover::after{
+    position: relative;
+    z-index: 2;
+    font: var(--fa-font-solid);
+    font-size: 20px;
+    margin-left: 2px;
+    content: '\f303';
+}
+
+.panel a:hover{
+    background-color: lightpink;
+}
+
+.panel a:hover .fa-database{
+    display: none;
+}
