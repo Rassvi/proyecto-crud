@@ -33,7 +33,7 @@ class ArticulosController extends Controller
             'precio'=>['required', 'numeric'],
             'inventario'=>['required', 'numeric'],
             'categoria'=>['required'],
-            'garantía'=>['required', 'numeric'],
+            'garantia'=>['required', 'numeric']
         ]);
 
         $articulo = new Articulo();
@@ -43,7 +43,7 @@ class ArticulosController extends Controller
         $articulo->precio = $request->precio;
         $articulo->inventario = $request->inventario;
         $articulo->categoria = $request->categoria;
-        $articulo->garantía = $request->garantía;
+        $articulo->garantia = $request->garantia;
         $articulo->save();
 
         return redirect()->route('articulos_show', $articulo);
@@ -64,7 +64,7 @@ class ArticulosController extends Controller
             'precio'=>['required', 'numeric'],
             'inventario'=>['required', 'numeric'],
             'categoria'=>['required'],
-            'garantía'=>['required', 'numeric'],
+            'garantia'=>['required', 'numeric'],
         ]);
 
         $articulo->clave = $request->clave;
@@ -73,7 +73,7 @@ class ArticulosController extends Controller
         $articulo->precio = $request->precio;
         $articulo->inventario = $request->inventario;
         $articulo->categoria = $request->categoria;
-        $articulo->garantía = $request->garantía;
+        $articulo->garantia = $request->garantia;
         $articulo->save();
 
         return redirect()->route('articulos_show', $articulo);

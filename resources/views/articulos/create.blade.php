@@ -1,8 +1,11 @@
 <x-secondary>
+    <x-slot name="title">Agregar un nuevo articulo!</x-slot>
+    <x-slot name="header">Agregar: </x-slot>
+
     @if ($errors->any())
     <ul>
-        @foreach ($errors as $error)
-            <li>{{ $error }}</li>
+        @foreach ($errors->all() as $error)
+        <li>{{ $error }}</li>
         @endforeach
     </ul>
     @endif

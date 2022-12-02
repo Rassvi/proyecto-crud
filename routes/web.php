@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ArticulosController;
 use App\Http\Controllers\CursoController;
+use App\Http\Controllers\PeliculasController;
 use Illuminate\Support\Facades\Route;
 
 Route::view('/', 'welcome')->name('index');
@@ -26,4 +27,15 @@ Route::controller(ArticulosController::class)->group( function () {
     Route::put('/articulos/{articulo}', 'update')->name('articulos_update');
     Route::delete('/articulos/{articulo}', 'destroy')->name('articulos_destroy');
     Route::get('/articulos/{articulo}/edit', 'edit')->name('articulos_edit');
+});
+
+#PELICULAS
+Route::controller(PeliculasController::class)->group( function () {
+    Route::get('/peliculas', 'index')->name('peliculas_index');
+    Route::post('/peliculas', 'store')->name('peliculas_store');
+    Route::get('/peliculas/create', 'create')->name('peliculas_create');
+    Route::get('/peliculas/{pelicula}', 'show')->name('peliculas_show');
+    Route::put('/peliculas/{pelicula}', 'update')->name('peliculas_update');
+    Route::delete('/peliculas/{pelicula}', 'destroy')->name('peliculas_destroy');
+    Route::get('/peliculas/{pelicula}/edit', 'edit')->name('peliculas_edit');
 });

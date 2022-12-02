@@ -15,13 +15,13 @@
         @method('PUT') 
         
         <label for="curso">curso</label><br> 
-        <input type="text" name="curso" value="{{old('curso', $curso->curso)}}" id="curso"><br> 
+        <input type="text" name="curso" value="{{ old('curso', $curso->curso) }}" id="curso"><br> 
 
         <label for="precio">precio</label><br> 
-        <input type="number" step="any" name="precio" value="{{old('precio', $curso->precio)}}" id="precio"><br> 
+        <input type="number" step="any" name="precio" value="{{ old('precio', $curso->precio) }}" id="precio"><br> 
         
         <label for="fecha">Fecha</label><br> 
-        <input type="date" name="fecha" value="{{old('fecha', $curso->fecha)}}" id="fecha"><br> 
+        <input type="date" name="fecha" value="{{ old('fecha', $curso->fecha) }}" id="fecha"><br> 
         
         <input type="submit" value="Editar"> 
     </form>

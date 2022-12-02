@@ -10,9 +10,6 @@
         <li>Numero en inventario: {{ $articulo->inventario }}</li>
         <li>Categoría: {{ $articulo->categoria }}</li>
         <li>Garantía: {{ $articulo->garantia }}</li>
-        @php
-            vardump($articulo->garantia);
-        @endphp
     </ul>
 
     <a href="{{ route('articulos_index') }}"><i class="fa-solid fa-square-caret-left"></i></a>
